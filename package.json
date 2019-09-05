@@ -35,7 +35,6 @@
     "webpack": "^4.33.0",
     "webpack-node-externals": "^1.7.2"
   },
-  "author": "Corinth Team Lifeway",
   "license": "ISC",
   "jest": {
     "verbose": true,
