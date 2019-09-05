@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+.env
+.serverless
+.build
+.idea
+.vscode
+setEnv.sh
+coverage/
+.nyc_output/
+.DS_Store
+.webpack
+.credentials
+.serverless/

@@ -1,0 +1,31 @@
+service: serverless-graphql-poc
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: sandbox
+  profile: sandbox
+  region: us-east-1
+
+functions:
+  graphql:
+    handler: src/index.handler
+    events:
+      - http:
+          path: graphql
+          method: post
+          cors: true
+  playground:
+    handler: src/index.handler
+    events:
+      - http:
+          path: playground
+          method: get

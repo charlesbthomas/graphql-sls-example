@@ -1,0 +1,64 @@
+{
+  "name": "graphql-sls-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.9.3",
+    "express": "^4.17.1",
+    "graphql": "^14.5.4",
+    "graphql-playground-middleware-express": "^1.7.12",
+    "node-fetch": "^2.6.0",
+    "serverless-http": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@types/jest": "^24.0.18",
+    "aws-sdk": "^2.468.0",
+    "aws-sdk-mock": "^4.5.0",
+    "babel-eslint": "8.2.3",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-source-map-support": "2.0.1",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
+    "jest": "^24.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "serverless": "^1.44.1",
+    "serverless-webpack": "^5.3.0",
+    "webpack": "^4.33.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "author": "Corinth Team Lifeway",
+  "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "testRegex": "/test/.*\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.webpack/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/logger.js",
+      "!**/mongo-config.js",
+      "!**/repo/**"
+    ],
+    "testEnvironment": "node"
+  }
+}
