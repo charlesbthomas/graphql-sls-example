@@ -1,7 +1,4 @@
-import express from 'express';
-import serverless from 'serverless-http';
-import graphiql from 'graphql-playground-middleware-express';
-import { ApolloServer, gql } from 'apollo-server-express';
+import { ApolloServer, gql } from 'apollo-server-lambda';
 import github from './githubAPI';
 
 const typeDefs = gql`
@@ -27,21 +24,16 @@ const resolvers = {
   }
 };
 
-const app = express();
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => ({
     github
   }),
-  path: '/graphql'
+  playground: true,
+  introspection: true,
 });
 
-server.applyMiddleware({ app });
-
-app.get('/playground', graphiql({ endpoint: '/sandbox/graphql' }));
-
-const handler = serverless(app);
+const handler = server.createHandler();
 
 export { handler };
